@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADSO LAB | Laboratorio de Práctica Web</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de navegación y controles superiores -->
+  <header class="topbar">
+    <div class="logo-area">
+      <div class="badge-tag">&lt;/&gt;</div>
+      <div>
+        <h1>ADSO LAB</h1>
+        <p class="subtitle">Entrenamiento práctico de HTML & CSS</p>
+      </div>
+    </div>
+
+    <!-- Filtros de categoría -->
+    <div class="filter-group">
+      <button class="filter-btn active" data-category="all">Todos</button>
+      <button class="filter-btn" data-category="html">Solo HTML</button>
+      <button class="filter-btn" data-category="css">Solo CSS</button>
+      <button class="filter-btn" data-category="both">HTML + CSS</button>
+    </div>
+
+    <!-- Selector de retos y acciones -->
+    <div class="action-group">
+      <select id="exercise-select" class="custom-select" aria-label="Seleccionar ejercicio"></select>
+      <button id="reset-btn" class="btn btn-secondary" title="Volver al código original del ejercicio">Restablecer</button>
+      <button id="copy-btn" class="btn btn-primary" title="Copiar código al portapapeles">Copiar</button>
+    </div>
+  </header>
+
+  <!-- Contenedor principal de la aplicación -->
+  <main class="app-layout">
+    
+    <!-- Panel 1: Explicación del reto -->
+    <aside class="panel challenge-panel">
+      <div class="panel-header">
+        <span class="badge" id="challenge-category">Categoría</span>
+        <span class="level-indicator" id="challenge-level">Nivel</span>
+      </div>
+
+      <div class="panel-body">
+        <h2 id="challenge-title">Título del Reto</h2>
+        
+        <section class="task-box">
+          <h3>Lo que debes hacer:</h3>
+          <p id="challenge-description">Instrucciones claras del ejercicio.</p>
+        </section>
+
+        <details class="hint-box" open>
+          <summary>💡 Ayuda / Pista</summary>
+          <p id="challenge-hint">Pista para resolver el reto.</p>
+        </details>
+      </div>
+    </aside>
+
+    <!-- Panel 2: Editor de código en vivo -->
+    <section class="panel editor-panel">
+      <div class="panel-header bar-dark">
+        <span>editor.html</span>
+        <span class="hint-key">Usa Tab para indentar</span>
+      </div>
+      <div class="editor-wrapper">
+        <textarea id="code-editor" spellcheck="false" placeholder="Escribe tu código aquí..."></textarea>
+      </div>
+    </section>
+
+    <!-- Panel 3: Vista previa en tiempo real -->
+    <section class="panel preview-panel">
+      <div class="panel-header">
+        <span>Vista Previa en Vivo</span>
+        <div class="viewport-toggles">
+          <button class="view-btn active" data-view="desktop">Escritorio</button>
+          <button class="view-btn" data-view="mobile">Móvil</button>
+        </div>
+      </div>
+      <div class="preview-stage" id="preview-stage">
+        <iframe id="live-preview" title="Vista previa en tiempo real"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
